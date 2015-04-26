@@ -10,26 +10,32 @@ import UIKit
 import CoreData
 
 
-class ViewController: UIViewController, UITableViewDataSource {
-
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+  
+  var logItems = [LogItem]()
   
   let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
   
   var logTableView = UITableView(frame: CGRectZero, style: .Plain)
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 5
+    return logItems.count
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("LogCell", forIndexPath: indexPath) as! UITableViewCell
-    cell.textLabel?.text = "\(indexPath.row)"
+    
+    // get the logItems from the fetchLog() method
+    let logItem = logItems[indexPath.row]
+    cell.textLabel?.text = logItem.title
     return cell
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    
+    fetchLog()
     
     if let moc = self.managedObjectContext {
       // create some dummy data
@@ -60,9 +66,22 @@ class ViewController: UIViewController, UITableViewDataSource {
       logTableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "LogCell")
       
       logTableView.dataSource = self
+      logTableView.delegate = self
     }
   }
-
+  
+  // get the items from the LogItem database
+  func fetchLog() {
+    let fetchRequest = NSFetchRequest(entityName: "LogItem")
+    if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [LogItem] {
+      logItems = fetchResults
+    }
+  }
+  
+  func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    let logItem = logItems[indexPath.row]
+    println(logItem.itemText)
+  }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()

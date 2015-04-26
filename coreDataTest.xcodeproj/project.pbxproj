@@ -15,6 +15,7 @@
 		EF8F6F241AE9E64F00213DEF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF8F6F221AE9E64F00213DEF /* LaunchScreen.xib */; };
 		EF8F6F301AE9E64F00213DEF /* coreDataTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F6F2F1AE9E64F00213DEF /* coreDataTestTests.swift */; };
 		EF8F6F3A1AEA01F100213DEF /* LogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F6F391AEA01F100213DEF /* LogItem.swift */; };
+		EF8F6F3C1AEC2BAB00213DEF /* testView2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8F6F3B1AEC2BAB00213DEF /* testView2Controller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		EF8F6F2E1AE9E64F00213DEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF8F6F2F1AE9E64F00213DEF /* coreDataTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreDataTestTests.swift; sourceTree = "<group>"; };
 		EF8F6F391AEA01F100213DEF /* LogItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogItem.swift; sourceTree = "<group>"; };
+		EF8F6F3B1AEC2BAB00213DEF /* testView2Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testView2Controller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				EF8F6F221AE9E64F00213DEF /* LaunchScreen.xib */,
 				EF8F6F181AE9E64F00213DEF /* coreDataTest.xcdatamodeld */,
 				EF8F6F141AE9E64F00213DEF /* Supporting Files */,
+				EF8F6F3B1AEC2BAB00213DEF /* testView2Controller.swift */,
 			);
 			path = coreDataTest;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				EF8F6F3A1AEA01F100213DEF /* LogItem.swift in Sources */,
 				EF8F6F1A1AE9E64F00213DEF /* coreDataTest.xcdatamodeld in Sources */,
 				EF8F6F171AE9E64F00213DEF /* AppDelegate.swift in Sources */,
+				EF8F6F3C1AEC2BAB00213DEF /* testView2Controller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
